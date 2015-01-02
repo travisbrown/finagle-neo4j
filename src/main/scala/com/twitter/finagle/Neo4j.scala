@@ -4,7 +4,7 @@ import com.twitter.finagle.neo4j.protocol.{Neo4jTransporter, Request, Result}
 import com.twitter.finagle.client.{Bridge, DefaultClient}
 import com.twitter.finagle.dispatch.PipeliningDispatcher
 import com.twitter.finagle.stats.StatsReceiver
-import com.twitter.finagle.pool.ReusingPool
+import com.twitter.finagle.pool.SingletonPool
 
 trait Neo4jRichClient { self: Client[Request, Result] =>
 
@@ -21,7 +21,7 @@ case class Neo4jClient private[finagle]() extends Client[Request, Result]
   val defaultClient = new DefaultClient[Request, Result](
     name = "neo4j",
     endpointer = Bridge[Request, Result, Request, Result](Neo4jTransporter, new PipeliningDispatcher(_)),
-    pool = (sr: StatsReceiver) => new ReusingPool(_, sr)
+    pool = (sr: StatsReceiver) => new SingletonPool(_, sr)
   )
 
   override def newClient(dest: Name, label: String): ServiceFactory[Request, Result] =

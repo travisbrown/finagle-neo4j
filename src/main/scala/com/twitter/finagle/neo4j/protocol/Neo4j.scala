@@ -55,19 +55,20 @@ class Neo4j(stats: StatsReceiver) extends CodecFactory[Request, Result] {
 
 private class Neo4jTracingFilter extends SimpleFilter[Request, Result] {
 
-  override def apply(request: Request, service: Service[Request, Result]) = Trace.unwind {
-    if (Trace.isActivelyTracing) {
-      // TODO: use something decent instead of .getClass.toString ...
-      Trace.recordRpcname("neo4j", request.getClass.toString)
-      Trace.record(Annotation.ClientSend())
-      service(request) map { result =>
-        Trace.record(Annotation.ClientRecv())
-        result
+  override def apply(request: Request, service: Service[Request, Result]) =
+    Trace.letId(Trace.nextId) {
+      if (Trace.isActivelyTracing) {
+        // TODO: use something decent instead of .getClass.toString ...
+        Trace.recordRpcname("neo4j", request.getClass.toString)
+        Trace.record(Annotation.ClientSend())
+        service(request) map { result =>
+          Trace.record(Annotation.ClientRecv())
+          result
+        }
       }
+      else
+        service(request)
     }
-    else
-      service(request)
-  }
 }
 
 private class Neo4jLoggingFilter(stats: StatsReceiver)
