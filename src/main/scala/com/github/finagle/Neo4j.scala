@@ -1,6 +1,7 @@
-package com.twitter.finagle
+package com.github.finagle
 
-import com.twitter.finagle.neo4j.protocol.{Neo4jTransporter, Request, Result}
+import com.github.finagle.neo4j.protocol.{Neo4jTransporter, Request, Result}
+import com.twitter.finagle.{Client, Name, ServiceFactory}
 import com.twitter.finagle.client.{Bridge, DefaultClient}
 import com.twitter.finagle.dispatch.PipeliningDispatcher
 import com.twitter.finagle.stats.StatsReceiver

@@ -1,14 +1,12 @@
-package com.twitter.finagle.neo4j.protocol
+package com.github.finagle.neo4j.protocol
 
-import com.twitter.finagle.stats.{NullStatsReceiver, StatsReceiver}
-import com.twitter.finagle._
-import org.jboss.netty.channel.{Channels, ChannelPipelineFactory}
-import com.twitter.finagle.tracing.{Annotation, Trace}
-import com.twitter.finagle.netty3.Netty3Transporter
-import com.twitter.finagle.ServerCodecConfig
-import com.twitter.finagle.ClientCodecConfig
-import org.jboss.netty.handler.codec.http.{HttpContentDecompressor, HttpChunkAggregator, HttpClientCodec}
 import com.twitter.conversions.storage._
+import com.twitter.finagle._
+import com.twitter.finagle.netty3.Netty3Transporter
+import com.twitter.finagle.stats.{NullStatsReceiver, StatsReceiver}
+import com.twitter.finagle.tracing.{Annotation, Trace}
+import org.jboss.netty.channel.{Channels, ChannelPipelineFactory}
+import org.jboss.netty.handler.codec.http.{HttpContentDecompressor, HttpChunkAggregator, HttpClientCodec}
 
 object Neo4jClientPipelineFactory extends ChannelPipelineFactory {
 

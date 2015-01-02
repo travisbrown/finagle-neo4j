@@ -1,9 +1,9 @@
-package com.twitter.finagle.neo4j.protocol.endpoints.transaction
+package com.github.finagle.neo4j.protocol.endpoints.transaction
 
-import com.twitter.finagle.neo4j.protocol.{Result, Transaction}
+import com.github.finagle.neo4j.util.MapperUtils
+import com.github.finagle.neo4j.protocol.{Result, Transaction}
 import org.jboss.netty.handler.codec.http.HttpResponse
 import org.jboss.netty.util.CharsetUtil
-import com.twitter.finagle.neo4j.util.MapperUtils
 import scala.collection.{LinearSeq, SeqLike}
 
 case class Row(values: IndexedSeq[Any])

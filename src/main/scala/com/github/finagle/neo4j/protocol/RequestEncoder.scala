@@ -1,7 +1,7 @@
-package com.twitter.finagle.neo4j.protocol
+package com.github.finagle.neo4j.protocol
 
-import org.jboss.netty.channel.{MessageEvent, ChannelHandlerContext, SimpleChannelDownstreamHandler}
 import com.twitter.logging.Logger
+import org.jboss.netty.channel.{MessageEvent, ChannelHandlerContext, SimpleChannelDownstreamHandler}
 import org.jboss.netty.handler.codec.http.HttpHeaders
 
 /**

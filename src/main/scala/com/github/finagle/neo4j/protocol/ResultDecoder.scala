@@ -1,9 +1,9 @@
-package com.twitter.finagle.neo4j.protocol
+package com.github.finagle.neo4j.protocol
 
-import org.jboss.netty.channel.{Channels, MessageEvent, ChannelHandlerContext, SimpleChannelHandler}
+import com.github.finagle.neo4j.protocol.endpoints.transaction.TransactionResults
 import com.twitter.logging.Logger
+import org.jboss.netty.channel.{Channels, MessageEvent, ChannelHandlerContext, SimpleChannelHandler}
 import org.jboss.netty.handler.codec.http.HttpResponse
-import com.twitter.finagle.neo4j.protocol.endpoints.transaction.TransactionResults
 
 /**
  * Convert Netty responses to a Neo4j results

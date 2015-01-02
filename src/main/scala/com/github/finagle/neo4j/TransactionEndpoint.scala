@@ -1,7 +1,7 @@
-package com.twitter.finagle.neo4j
+package com.github.finagle.neo4j
 
-import com.twitter.finagle.neo4j.protocol.{Request, Result, Transaction}
-import com.twitter.finagle.neo4j.protocol.endpoints.transaction._
+import com.github.finagle.neo4j.protocol.{Request, Result, Transaction}
+import com.github.finagle.neo4j.protocol.endpoints.transaction._
 import com.twitter.util.Future
 
 trait TransactionEndpoint { self: BaseClient =>

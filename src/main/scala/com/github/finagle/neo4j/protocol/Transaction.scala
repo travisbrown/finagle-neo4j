@@ -1,4 +1,4 @@
-package com.twitter.finagle.neo4j.protocol
+package com.github.finagle.neo4j.protocol
 
 case class Transaction(commit: String,
                        expires: String) {

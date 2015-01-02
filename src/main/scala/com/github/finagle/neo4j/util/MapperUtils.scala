@@ -1,9 +1,9 @@
-package com.twitter.finagle.neo4j.util
+package com.github.finagle.neo4j.util
 
-import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.databind.{SerializationFeature, DeserializationFeature, ObjectMapper}
-import com.twitter.util.Try
 import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.databind.{SerializationFeature, DeserializationFeature, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.twitter.util.Try
 
 private[neo4j] object MapperUtils {
 

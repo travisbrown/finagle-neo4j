@@ -1,8 +1,8 @@
-package com.twitter.finagle.neo4j
+package com.github.finagle.neo4j
 
-import com.twitter.finagle.builder.ClientBuilder
+import com.github.finagle.neo4j.protocol._
 import com.twitter.finagle.Service
-import com.twitter.finagle.neo4j.protocol._
+import com.twitter.finagle.builder.ClientBuilder
 import com.twitter.util.Future
 
 object Client {

@@ -1,9 +1,9 @@
-package com.twitter.finagle.neo4j.protocol.endpoints.transaction
+package com.github.finagle.neo4j.protocol.endpoints.transaction
 
-import com.twitter.finagle.neo4j.protocol.{Transaction, SimpleRequest}
+import com.github.finagle.neo4j.protocol.{Transaction, SimpleRequest}
+import com.github.finagle.neo4j.protocol.endpoints.transaction.TransactionRequests._
+import com.github.finagle.neo4j.util.MapperUtils
 import com.twitter.finagle.http.Method._
-import com.twitter.finagle.neo4j.util.MapperUtils
-import TransactionRequests._
 
 private[transaction] object TransactionRequests {
 

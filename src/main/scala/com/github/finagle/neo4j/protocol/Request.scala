@@ -1,8 +1,8 @@
-package com.twitter.finagle.neo4j.protocol
+package com.github.finagle.neo4j.protocol
 
-import org.jboss.netty.handler.codec.http.{DefaultHttpRequest, HttpMethod, HttpRequest}
 import com.twitter.finagle.http.{MediaType, Message}
 import com.twitter.finagle.http.netty.HttpRequestProxy
+import org.jboss.netty.handler.codec.http.{DefaultHttpRequest, HttpMethod, HttpRequest}
 import org.jboss.netty.handler.codec.http.HttpVersion._
 
 abstract class Request extends Message with HttpRequestProxy {
