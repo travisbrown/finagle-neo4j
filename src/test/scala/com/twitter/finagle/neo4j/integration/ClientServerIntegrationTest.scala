@@ -8,7 +8,7 @@ import org.scalatest.FunSuite
 
 class ClientServerIntegrationTest extends FunSuite {
 
-  lazy val client = Neo4j.newRichClient("127.0.0.1:7474")
+  lazy val client = Neo4j.newRichClient("localhost:7474")
 
   test("A client should set and get") {
     val f = for {
